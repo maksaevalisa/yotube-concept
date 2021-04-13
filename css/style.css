@@ -56,6 +56,7 @@ body {
   padding-right: 17px;
   max-width: 830px;
   width: 70%;
+  margin-right: 40px;
 }
 
 .logo {
@@ -119,7 +120,7 @@ body {
 
 .sidebar {
   position: fixed;
-  width: 12%;
+  width: 220px;
   left: 0;
   top: 114px;
   height: calc(100% - 114px);
@@ -145,8 +146,9 @@ body {
   width: 100%;
   height: 400px;
   margin-top: 85px;
-  padding-left: 13%;
+  padding-left: 250px;
   padding-top: 30px;
+  padding-right: 70px;
 }
 
 .nav-menu {
@@ -201,14 +203,15 @@ body {
   margin-bottom: 50px;
 }
 
+.channel-bottom {
+  position: relative;
+  padding-bottom: 50px;
+}
+
 .channel-title {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #19202c;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 33px;
   margin-bottom: 30px;
 }
 
@@ -216,19 +219,66 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .channel-text {
-  margin-left: 20px;
-  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 33px;
+  color: #19202c;
+  cursor: pointer;
 }
 
-.video-card {
-  width: 250px;
+.channel-recommended {
+  line-height: 50px;
+}
+
+.channel-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #c2c2c2;
+  margin-left: 20px;
+}
+
+.subscribe-button {
+  height: 40px;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+  margin-left: 777px;
+  position: absolute;
+  right: 19%;
+}
+
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 66px;
+  margin-top: 15px;
+  margin-right: 150px;
+  position: absolute;
+  top: -3px;
+  right: 1%;
+}
+
+.channel-button {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
 }
 
 .video-thumb {
-  width: 250px;
+  width: 100%;
   height: 150px;
   overflow: hidden;
   border-radius: 14px;
@@ -236,8 +286,22 @@ body {
 }
 
 .thumbnail {
-  width: 250px;
+  width: 100%;
   height: 150px;
+  object-fit: cover;
+}
+
+.video-thumb-channel2 {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.thumbnail-channel2 {
+  width: 100%;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -290,18 +354,121 @@ body {
   margin-left: 5px;
 }
 
-.channel-button {
-  cursor: pointer;
-  border: 0;
-  outline: 0;
+.mobile-sidebar {
+  display: none;
 }
 
-.slider-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 66px;
-  position: absolute;
-  top: 15px;
-  right: 8%;
+.mobile-search {
+  display: none;
+}
+
+.slider-buttons-mobile {
+  display: none;
+}
+
+@media (max-width: 1600px) {
+  .subscribe-button {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .channel-description {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .icons {
+    display: none;
+  }
+  .user {
+    margin-left: auto;
+  }
+  .swiper-slide {
+    margin-bottom: 40px;
+  }
+  .slider-buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-buttons-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    margin-top: 15px;
+    margin-right: 30px;
+    position: absolute;
+    top: -3px;
+    right: 0;
+  }
+  .channel-button-mobile {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+  }
+  .video-thumb,
+  .thumbnail,
+  .video-thumb-channel2,
+  .thumbnail-channel2 {
+    height: 300px;
+  }
+  .menu-button {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-left: 32px;
+  }
+  .mobile-sidebar {
+    display: block;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  }
+  .mobile-sidebar .nav-link {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-sidebar .nav-menu {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 13px;
+    padding-bottom: 11px;
+    border-top: 1px #f1f1f1 solid;
+  }
+  .nav-text {
+    margin-left: 0;
+    font-size: 10px;
+  }
+  .nav-item {
+    margin-bottom: 0;
+  }
+  .mobile-search {
+    display: block;
+    margin-left: auto;
+  }
+  .input-group {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    opacity: 0;
+    width: 70%;
+    margin-left: 20px;
+    transition: top 0.2s;
+  }
+  .input-group.is-open {
+    opacity: 1;
+    top: 20px;
+  }
 }
